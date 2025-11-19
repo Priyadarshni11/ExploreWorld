@@ -37,7 +37,7 @@
 
     <div class="cards">
       <article class="card">
-        <img src="imageParis.webp" alt="Paris — Eiffel Tower" />
+        <img src="Paris.webp" alt="Paris — Eiffel Tower"  height=850px width=500px />
         <div class="card-body">
           <h3>Paris</h3>
           <p>The romantic city known for art, cuisine and unforgettable landmarks.</p>
@@ -45,7 +45,7 @@
       </article>
 
       <article class="card">
-        <img src="imageMaldives.webp" alt="Maldives — Beach" />
+        <img src="Maldives.webp" alt="Maldives — Beach" height=850px width=500px />
         <div class="card-body">
           <h3>Maldives</h3>
           <p>Pristine lagoons, white sand beaches and relaxing island resorts.</p>
@@ -53,7 +53,7 @@
       </article>
 
       <article class="card">
-        <img src="imageJapan.webp" alt="Japan — Temple and cherry blossoms" />
+        <img src="Japan.webp" alt="Japan — Temple and cherry blossoms" height=850px width=500px />
         <div class="card-body">
           <h3>Japan</h3>
           <p>A beautiful mix of tradition, innovation and seasonal wonders.</p>
@@ -84,22 +84,30 @@
   </footer>
 
   <script>
-    // simple mobile menu toggle
-    (function () {
-      const btn = document.querySelector('.menu-toggle');
-      const nav = document.querySelector('.nav');
-      btn.addEventListener('click', () => {
-        nav.classList.toggle('nav-open');
+  (function () {
+    const menuBtn = document.querySelector(".menu-toggle");
+    const navMenu = document.querySelector(".nav");
+
+    // Toggle mobile menu
+    menuBtn.addEventListener("click", () => {
+      navMenu.classList.toggle("nav-open");
+    });
+
+    // Smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(link => {
+      link.addEventListener("click", e => {
+        e.preventDefault();
+        document
+          .querySelector(link.getAttribute("href"))
+          .scrollIntoView({ behavior: "smooth" });
+
+        // Close mobile menu on click (for mobile UX)
+        navMenu.classList.remove("nav-open");
       });
-      // smooth scroll for internal links
-      document.querySelectorAll('a[href^="#"]').forEach(a=>{
-        a.addEventListener('click', e=>{
-          e.preventDefault();
-          document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
-        });
-      });
-    })();
-  </script>
+    });
+  })();
+</script>
+
+  
 </body>
 </html>
-
