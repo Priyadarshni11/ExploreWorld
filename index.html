@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ExploreWorld — Travel Website</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <div class="logo">ExploreWorld</div>
+      <nav class="nav">
+        <a href="#hero">Home</a>
+        <a href="#places">Destinations</a>
+        <a href="#about">About</a>
+      </nav>
+      <button class="menu-toggle" aria-label="Open menu">☰</button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="hero" class="hero">
+    <div class="hero-overlay"></div>
+    <div class="container hero-inner">
+      <h1>Discover Beautiful Destinations</h1>
+      <p>Adventure • Nature • Culture — Plan your perfect trip with ExploreWorld.</p>
+      <a class="btn" href="#places">Explore Now</a>
+    </div>
+  </section>
+
+  <!-- PLACES -->
+  <section id="places" class="places container">
+    <h2 class="section-title">Top Destinations</h2>
+
+    <div class="cards">
+      <article class="card">
+        <img src="imageParis.png" alt="Paris — Eiffel Tower" />
+        <div class="card-body">
+          <h3>Paris</h3>
+          <p>The romantic city known for art, cuisine and unforgettable landmarks.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="imageMaldives.png" alt="Maldives — Beach" />
+        <div class="card-body">
+          <h3>Maldives</h3>
+          <p>Pristine lagoons, white sand beaches and relaxing island resorts.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="imageJapan.png" alt="Japan — Temple and cherry blossoms" />
+        <div class="card-body">
+          <h3>Japan</h3>
+          <p>A beautiful mix of tradition, innovation and seasonal wonders.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="about container">
+    <h2 class="section-title">About ExploreWorld</h2>
+    <p>
+      ExploreWorld is built as part of our AWS Cloud Lab project. The site demonstrates static website
+      hosting on Amazon S3, cloud storage and deployment. It is a simple, responsive static site using
+      HTML and CSS — ideal for S3 hosting and demonstration.
+    </p>
+    <div class="about-meta">
+      <div>Team: <strong>Cloudexx</strong></div>
+      <div>Members: Sharmila S | Rakshitha S | Priyadarshni B</div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 ExploreWorld • Hosted on Amazon S3</p>
+    </div>
+  </footer>
+
+  <script>
+    // simple mobile menu toggle
+    (function () {
+      const btn = document.querySelector('.menu-toggle');
+      const nav = document.querySelector('.nav');
+      btn.addEventListener('click', () => {
+        nav.classList.toggle('nav-open');
+      });
+      // smooth scroll for internal links
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click', e=>{
+          e.preventDefault();
+          document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
