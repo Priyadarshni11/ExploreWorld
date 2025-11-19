@@ -39,7 +39,7 @@ html,body{height:100%}
 /* HERO */
 .hero{
   height:82vh;display:flex;align-items:center;justify-content:center;
-  background-image:url('image.png');background-size:cover;background-position:center;
+  background-image:url('hero.webp');background-size:cover;background-position:center;
   position:relative;margin-top:64px;
 }
 .hero-overlay{
@@ -84,4 +84,74 @@ html,body{height:100%}
   .menu-toggle{display:block}
   .nav.nav-open a{display:block;padding:10px;background:#fff;border-radius:8px;margin:6px 0}
   .nav{position:absolute;right:20px;top:64px;flex-direction:column;background:transparent}
+}
+/* 📱 Mobile Responsive Fixes */
+@media (max-width: 900px){
+    
+    /* Hero text smaller on mobile */
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .hero p {
+        font-size: 14px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    /* Cards become full width */
+    .card {
+        width: 90%;
+    }
+
+    /* Navbar turns into vertical dropdown */
+    .nav {
+        display: none;
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        right: 20px;
+        top: 60px;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav.nav-open {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Center about text more tightly */
+    .about p {
+        padding: 0 10px;
+        font-size: 15px;
+    }
+}
+
+/* Smaller screens (425px and below) */
+@media (max-width: 425px){
+    .hero {
+        height: 70vh;
+    }
+
+    .hero h1 {
+        font-size: 22px;
+    }
+
+    .hero p {
+        font-size: 13px;
+    }
+}
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
 }
